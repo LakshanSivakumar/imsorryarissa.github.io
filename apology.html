@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>I'm Sorry</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #e6d7ce;
+      --card: #f0e8e3;
+      --accent: #b8988d;
+      --text: #4a3b35;
+    }
+    html,body{height:100%;margin:0;background:var(--bg);font-family:'Chivo',sans-serif;color:var(--text);}
+    .container{max-width:760px;margin:48px auto;padding:28px;}
+    h1{font-size:36px;text-align:center;margin:0 0 18px;}
+    .card{
+      background:var(--card);
+      padding:26px;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,0.06);
+      line-height:1.7;color:#333;
+    }
+
+    /* Next button (thick border) */
+    .next-btn-outline {
+      background: transparent;
+      border: 3px solid var(--accent);
+      color: var(--text);
+      padding: 14px 44px;
+      border-radius: 40px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.28s ease;
+      display: inline-block;
+      margin: 20px 300px 0 auto;
+    }
+    .next-btn-outline:hover{
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    .center {text-align:center;}
+    .no-btn-outline {
+      background: transparent;
+      border: 3px solid var(--accent);
+      color: var(--text);
+      padding: 14px 44px;
+      border-radius: 40px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.28s ease;
+      display: inline-block;
+      margin: 20px auto 0 auto;
+      position: absolute;
+      left: 55%;
+
+    }
+    .center {text-align:center;}
+
+    /* Hidden section */
+    #next-section {
+      opacity: 0;
+      transform: translateY(28px);
+      max-width:640px;
+      margin: 40px auto 0;
+      transition: opacity 720ms ease, transform 720ms cubic-bezier(.2,.9,.3,1);
+      pointer-events: none; /* prevent interaction until shown */
+    }
+    #next-section.show{
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #apologise{
+        position: relative;
+        left: 22%;
+        font-size: 18px;
+    }
+
+    .fade-img{
+      width: 320px;
+      max-width: 90%;
+      display:block;
+      margin: 0 auto 18px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+    }
+    .next-text{ text-align:center; color:var(--text); }
+    .next-text h2{ margin: 8px 0 10px; font-size:22px; }
+    .next-text p{ margin:0; font-size:16px; line-height:1.6; max-width:560px; margin-left:auto;margin-right:auto; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>After reading that...</h1>
+
+    <div class="card">
+      <p id="apologise">Arissa, Do you forgive me for what I have done?</p>
+
+      <div class="center">
+        <!-- IMPORTANT: button id must match JS below -->
+        <button id="nextBtn" class="next-btn-outline" type="button">Yes</button>
+        <button id="noBtn" class="no-btn-outline" type="button">No</button>
+      </div>
+    </div>
+
+    <!-- This section is hidden until ".show" is added -->
+    <section id="next-section" aria-hidden="true">
+      <!-- replace src with your Jellycat or memory image -->
+      <img src="cr10_480x480.jpg-2.webp" alt="Jellycat plush" class="fade-img">
+      <div class="next-text card" style="margin-top:12px;">
+        <h2>Thank you for forgiving me. I love you and I will never disappoint you again.</h2>
+        <p>Here are 100 reasons why I love you</p>
+        <p>
+          1. Your eyes<br>
+          2. Your smile <br>
+          3. Your nose <br>
+          4. Your hair <br>
+          5. Your ears <br>
+          6. Your face <br>
+          7. Your cute laugh <br>
+          8. Your soothing voice <br>
+          9. How you're so pretty <br>
+          10. Your kindness <br>
+          11. Your care <br>
+          12. Your smartness <br>
+          13. Your hardworking character <br>
+          14. You being a procrastinator just like me <br>
+          15. You forgive me quickly<br>
+          16. I love how you open yourself up to me <br>
+          17. I love how you are courageous <br>
+          18. I love how you make me push myself beyond my limits <br>
+          19. I love how you make me feel alive <br>
+          20. I love you you care about me, no matter what I do <br>
+          21. I love how you take care of me <br>
+          22. I love how you care about my success and my future <br>
+          23. I love how passionate you are <br>
+          24. I love how you have ambitious goals <br>
+          25. I love how you love very well <br>
+          26. I love how beautiful you are <br>
+          27. I love how your body is an artwork <br>
+          28. I love how your body is flawless <br>
+          29. I love your jokes <br> 
+          30. I love your stupid moments <br>
+          31. I love how you allow me to be stupid with you <br>
+          32. I love how you make me smile when I look at you <br>
+          33. I love how we could call for endless hours a day, and still miss each other <br>
+          34. I love how we talk to each other no matter how angry or hurt we are <br>
+          35. I love how you dont give up on me <br>
+          36. I love how you send me tiktoks of cats <br>
+          37. I love the way you look at me<br>
+          38. I love how your body looks <br>
+          39. I love your touch <br>
+          40. I love the way you kiss me <br>
+          41. I love the way you pet my hair <br>
+          42. I love the way you tease me <br>
+          43. I love how you got me into RH and spent time with you through it<br>
+          44. I love your tasty cookies <br>
+          45. I loveeeee your brownies so much <br>
+          46. I love how you always beat me at buckshot <br>
+          47. I love how you always carried me through roblox obbies <br>
+          48. I love how you always wanted to tease and annoy me which was so cute <br>
+          49. I love playing fnaf with you. <br>
+          50. I love how you introduced me to so many new games <br>
+          51. I love how we spent every night playing roblox <br>
+          52. I loved playing puzzle game with you for "reasons" <br>
+          52. I love how you reassure me <br>
+          53. I love how you check on me when I go missing <br>
+          54. I love how you call me when i accidentally fall asleep <br>
+          55. I love how you miss me <br>
+          56. I love how you wake me up to talk to u <br>
+          57. I love how you call me while you get ready <br>
+          58. I love how you sleep on call with me <br>
+          59. I love the way you breathe when you sleep <br>
+          60. I love how cute you look when you sleep <br>
+          61. I love how you stay up with me to talk to me <br>
+          62. I love how you meow at me <br>
+          63. I love how you send me goofy voice recordings <br>
+          64. I love every single telebubble that you send me <br>
+          65. I love every single photo of yourself that u send me <br>
+          66. I love your competitiveness <br>
+          67. SIX SEVEN SIX SEVEN <br>
+          68. I love your way with words <br>
+          69. Six Nine. Ok im kidding.<br>
+          70. I love how you call me your woofie <br>
+          71. I love how you call me your puppy <br>
+          72. I love how you call me your woofie <br>
+          73. I love how you endlessly tease me <br>
+          74. I love the surprises you do for me <br>
+          75. I love that we clicked so well from the start <br>
+          76. I love that it feels like we've known each other for a lifetime <br>
+          77. I love the way you smell <br>
+          78. I love the sparkle in your eyes <br>
+          79. I love when you dig your nails into my skin <br>
+          80. I love when you scratch my hand <br>
+          81. I love when you bit my bicep <br>
+          82. I love getting oozy with you <br>
+          83. I love being able to take care of you. <br>
+          84. I love how we held hands on cylon <br>
+          85. I love how i carried you for the first time <br>
+          86. I love the walks we go on <br>
+          87. I love being able to hold your soft hand <br>
+          88. I love when you cling onto my arm <br>
+          89. I love to tie your shoelace for you <br>
+          90. I love seeing your smile when I buy flowers for you <br>
+          91. I love making you happy by buying you things <br>
+          92. I love when you step on my shoes <br>
+          93. I love when you do things for me like the sushi roll <br>
+          94. I love when you do something that I cant <br>
+          95. I love going to Don Don Donki with you <br>
+          96. I love grocery shopping with you <br>
+          97. I love online shopping with you <br>
+          98. I love picking clothes for you <br>
+          99. I love everything about you <br>
+          100. I love you Arissa.
+
+
+
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Ensure DOM is loaded before we query elements
+    document.addEventListener('DOMContentLoaded', function () {
+        const noBtn = document.getElementById('noBtn');
+  const margin = 50; // distance from edges
+
+  noBtn.addEventListener('mouseover', () => {
+    // Get viewport dimensions
+    const maxX = window.innerWidth - noBtn.offsetWidth - margin;
+    const maxY = window.innerHeight - noBtn.offsetHeight - margin;
+
+    // Generate random position
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    // Move button
+    noBtn.style.left = randomX + 'px';
+    noBtn.style.top = randomY + 'px';
+  });
+      const nextBtn = document.getElementById('nextBtn');
+      const nextSection = document.getElementById('next-section');
+
+      if (!nextBtn || !nextSection) {
+        console.error('Missing #nextBtn or #next-section elements.');
+        return;
+      }
+
+      nextBtn.addEventListener('click', function () {
+        // Add the class to reveal with CSS transition
+        nextSection.classList.add('show');
+        nextSection.setAttribute('aria-hidden','false');
+
+        // optional: hide the button after click
+        nextBtn.style.display = 'none';
+        noBtn.style.display = 'none';
+        // scroll the newly shown section into view smoothly
+        setTimeout(() => {
+          nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 80);
+      });
+    });
+  
+</script>
+</body>
+</html>
