@@ -88,6 +88,28 @@
       border-radius: 14px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.10);
     }
+    .click-btn-outline {
+      background: transparent;
+      border: 3px solid var(--accent);
+      color: var(--text);
+      padding: 14px 44px;
+      border-radius: 40px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.28s ease;
+      display: inline-block;
+      margin: 20px 300px 0 auto;
+      position: relative;
+      left: 27%;
+    }
+    .click-btn-outline:hover{
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    .center {text-align:center;}
     .next-text{ text-align:center; color:var(--text); }
     .next-text h2{ margin: 8px 0 10px; font-size:22px; }
     .next-text p{ margin:0; font-size:16px; line-height:1.6; max-width:560px; margin-left:auto;margin-right:auto; }
@@ -220,6 +242,8 @@
 
 
         </p>
+        <button id="nextBtn" class="click-btn-outline" type="button" onclick="document.location='ily.html'" >Click!</button>
+
       </div>
     </section>
   </div>
