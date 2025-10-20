@@ -136,23 +136,37 @@
     .next-text{ text-align:center; color:var(--text); }
     .next-text h2{ margin: 8px 0 10px; font-size:22px; }
     .next-text p{ margin:0; font-size:16px; line-height:1.6; max-width:560px; margin-left:auto;margin-right:auto; }
+.love-link {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+.love-link:visited,
+.love-link:active {
+  color: inherit; /* prevent blue or purple links */
+}
+
+.love-link:hover .love-card {
+  background-color: #eadcd5;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
   </style>
 </head>
 <body>
 
-    <h1>Here are "I love you" in all the languages I know</h1>
+    <h1>Click one of these for whatever you are feeling right now!</h1>
 
     <div class="cards-container">
         <section class="love-section">
-            <div class="love-card">I love you!</div>
-            <div class="love-card">Meh tenu piarre kadi</div>
-            <div class="love-card">Naan unnai kaathalikirain</div>
-            <div class="love-card">사랑행 Saranghaeng</div>
-            <div class="love-card">Saya sawang awak</div>
-            <div class="love-card">Te Amo</div>
-
+            <a href="angry.html" class="love-link"><div class="love-card">Click me when you're angry</div></a>
+            <a href="sad.html" class="love-link"><div class="love-card">Click me when you're sad</div></a>
+            <a href="happy.html" class="love-link"><div class="love-card">Click me when you're happy</div></a>
+            <a href="confused.html" class="love-link"><div class="love-card">Click me when you're confused</div></a>
+            <a href="insecure.html" class="love-link"><div class="love-card">Click me when you're feeling insecure</div></a>
           </section>
-          <button id="nextBtn" class="next-btn-outline" type="button" onclick="document.location='click.html'" >Next!!</button>
 
     
     <script>
@@ -170,7 +184,23 @@
         
           cards.forEach(card => observer.observe(card));
         });
+            document.querySelectorAll(".love-link").forEach(link => {
+              link.addEventListener("click", e => {
+                e.preventDefault();
+                document.body.style.opacity = "0";
+                setTimeout(() => {
+                  window.location.href = link.href;
+                }, 500);
+              });
+            });
         </script>
+        
+            
+            <style>
+            body {
+              transition: opacity 0.5s ease;
+            }
+            </style>
  
 </body>
 </html>

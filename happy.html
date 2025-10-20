@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>I love you</title>
+  <title>I'm Sorry</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
@@ -24,8 +24,9 @@
     /* Next button (thick border) */
     #sorry{
       position: relative;
-      left: 35%;
-      top: 50px;
+      left: 20%;
+    scale: 0.8;
+      top: 0px;
     }
     .next-btn-outline {
       background: transparent;
@@ -39,8 +40,6 @@
       transition: all 0.28s ease;
       display: inline-block;
       margin: 20px auto 0 auto;
-      position: relative;
-      left: 46%;
     }
     .next-btn-outline:hover{
       background: var(--accent);
@@ -83,7 +82,7 @@
     }
     #apologise{
         position: relative;
-        left: 22%;
+
         font-size: 18px;
     }
 
@@ -95,82 +94,29 @@
       border-radius: 14px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.10);
     }
-    @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.love-card {
-  background: #f6f0eb;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
-  border-radius: 20px;
-  padding: 40px;
-  width: 340px;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.3s ease;
-  margin: 20px auto;
-}
-
-.love-card.show {
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-/* Staggered delay for cascading effect */
-.love-card:nth-child(1) { animation-delay: 0.1s; }
-.love-card:nth-child(2) { animation-delay: 0.3s; }
-.love-card:nth-child(3) { animation-delay: 0.5s; }
-.love-card:nth-child(4) { animation-delay: 0.7s; }
-.love-card:nth-child(5) { animation-delay: 0.9s; }
-.love-card:nth-child(6) { animation-delay: 1.1s; }
-
-
-
     .next-text{ text-align:center; color:var(--text); }
     .next-text h2{ margin: 8px 0 10px; font-size:22px; }
     .next-text p{ margin:0; font-size:16px; line-height:1.6; max-width:560px; margin-left:auto;margin-right:auto; }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>YAY! Im so glad that you're happy!!</h1>
 
-    <h1>Here are "I love you" in all the languages I know</h1>
+    <div class="card">
+      <p id="apologise">MY DEAR ARISAAAA, I'm SO HAPPY that you are happy. It so cute, wonderful and lovely to see you happy. Your smile is really so priceless. I wish to know EVERYTHING about what happened and what made you happy. Seeing you happy has always been my life goal ever since I met you, and I cant be more happy that you finally are. I hope this happiness can go one forever and you never feel sad again! Once again, I'm super duper happy for you!!</p>
 
-    <div class="cards-container">
-        <section class="love-section">
-            <div class="love-card">I love you!</div>
-            <div class="love-card">Meh tenu piarre kadi</div>
-            <div class="love-card">Naan unnai kaathalikirain</div>
-            <div class="love-card">사랑행 Saranghaeng</div>
-            <div class="love-card">Saya sawang awak</div>
-            <div class="love-card">Te Amo</div>
+      <div class="center">
+        <!-- IMPORTANT: button id must match JS below -->
+        <button id="nextBtn" class="next-btn-outline" type="button" onclick="document.location='click.html'" >Click to go back!</button>
+      </div>
+    </div>
 
-          </section>
-          <button id="nextBtn" class="next-btn-outline" type="button" onclick="document.location='click.html'" >Next!!</button>
+    <img src="bg_f8f8f8-flat_750x_075_f-pad_750x1000_f8f8f8-removebg-preview.png" id="sorry">
 
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          const cards = document.querySelectorAll(".love-card");
-        
-          const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-                observer.unobserve(entry.target); // animate only once
-              }
-            });
-          }, { threshold: 0.2 }); // triggers when 20% of the element is visible
-        
-          cards.forEach(card => observer.observe(card));
-        });
-        </script>
+ 
+  </div>
+
  
 </body>
 </html>
